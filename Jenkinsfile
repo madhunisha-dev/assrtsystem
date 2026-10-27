@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout v1 Code') {
-            steps {
-                git branch: 'v1', url: 'https://github.com/madhunisha-dev/asset-system.git'
-            }
-        }
         stage('Build Docker Image') {
             steps {
                 script {
