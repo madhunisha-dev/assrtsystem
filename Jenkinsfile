@@ -3,18 +3,12 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
-                script {
-                    dockerImage = docker.build("madhunisha23/asset-system:v1")
-                }
+                bat 'docker build -t madhunisha-dev/asset-system:v1 .'
             }
         }
         stage('Push to DockerHub') {
             steps {
-                script {
-                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
-                        dockerImage.push("v1")
-                    }
-                }
+                bat 'docker push madhunisha-dev/asset-system:v1'
             }
         }
     }
