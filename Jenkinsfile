@@ -24,13 +24,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t madhunisha23/asset-system:v1 .'
+                bat '"C:\\Users\\madhu\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" build -t madhunisha23/asset-system:v1 .'
             }
         }
 
         stage('Push Docker Image') {
             steps {
-                bat 'docker push madhunisha23/asset-system:v1'
+                bat '"C:\\Users\\madhu\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" push madhunisha23/asset-system:v1'
             }
         }
     }
